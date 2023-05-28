@@ -68,7 +68,7 @@ elif choice == "DATA SCRAPPING":
         # Access youtube API
         api_service_name = 'youtube'
         api_version = 'v3'
-        api_key ='AIzaSyAUEbaM5Qkjt5m8yPvN2YEpMBsMvnM5rGs'
+        api_key ='use apikey'
         youtube = build(api_service_name,api_version,developerKey =api_key)
 
         # -------------------------------------------------------------------------------------------- #
@@ -269,7 +269,7 @@ elif choice == "DATA SCRAPPING":
         #combine channel data and videos data to a dict 
         final_output = {**channel, **videos}
 
-        client = MongoClient("mongodb+srv://Ak:PASSWORD@basicprojects.4ewytje.mongodb.net/?retryWrites=true&w=majority")
+        client = MongoClient("mongodb+srv://Ak:********@basicprojects.4ewytje.mongodb.net/?retryWrites=true&w=majority")
         db = client['ytdb']
         col  = db['channelinfo']
         # define the data to insert
@@ -294,7 +294,7 @@ elif choice == 'MIGRATION':
     st.header('MIGRATION')
     st.image(p3)
          
-    client = MongoClient("mongodb+srv://Ak:PASSWORD@basicprojects.4ewytje.mongodb.net/?retryWrites=true&w=majority")
+    client = MongoClient("mongodb+srv://Ak:********@basicprojects.4ewytje.mongodb.net/?retryWrites=true&w=majority")
     db = client['ytdb']
     col  = db['channelinfo'] 
 
@@ -389,7 +389,7 @@ elif choice == 'MIGRATION':
         connect = mysql.connector.connect(
                  host = "localhost",
                  user = "root",
-                 password = "passwordworthy",
+                 password = "*********",
                  auth_plugin = "mysql_native_password"
                  )
 
@@ -402,7 +402,7 @@ elif choice == 'MIGRATION':
         connect.close()
 
         # Connect to the new created database
-        engine = create_engine('mysql+mysqlconnector://root:passwordworthy@localhost/yt_db', echo=False)
+        engine = create_engine('mysql+mysqlconnector://root:*********@localhost/yt_db', echo=False)
 
         # Use pandas to insert the DataFrames data to the SQL Database -> table1
 
@@ -455,7 +455,7 @@ elif choice == 'VISUALIZATION':
 
     if Check_channel:
    # Create database connection
-       engine = create_engine('mysql+mysqlconnector://root:passwordworthy@localhost/yt_db', echo=False)
+       engine = create_engine('mysql+mysqlconnector://root:*********@localhost/yt_db', echo=False)
     # Execute SQL query to retrieve channel names
        query = "SELECT Channel_Name FROM channel;"
        results = pd.read_sql(query, engine)
