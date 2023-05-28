@@ -486,7 +486,7 @@ elif choice == 'VISUALIZATION':
     '10. Which videos have the highest number of comments, and what are their corresponding channel names?'), key = 'collection_question')
 
 # Creat a connection to SQL
-    connect_for_question = pymysql.connect(host='localhost', user='root', password='passwordworthy', db='yt_db')
+    connect_for_question = pymysql.connect(host='localhost', user='root', password='********', db='yt_db')
     cursor = connect_for_question.cursor()
 
 # Q1
